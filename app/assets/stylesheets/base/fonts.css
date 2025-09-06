@@ -1,0 +1,20 @@
+/* pacifico-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/pacifico-v22-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+  --font-header: "Pacifico", "Segoe Script", "Apple Chancery", "Bradley Hand",
+    "Brush Script MT", cursive;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}
