@@ -15,8 +15,8 @@
   list-style: none;
 
   /* masonry via multi-column layout */
-  columns: 24rem; /* responsive column width */
-  column-gap: 0.5rem;
+  columns: 22rem; /* base responsive column width */
+  column-gap: 1rem;
 }
 
 .posts__item {
@@ -30,4 +30,31 @@
   page-break-inside: avoid;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
+}
+
+/* Responsive column tuning */
+@media (max-width: 640px) {
+  .posts__list {
+    column-count: 1; /* single column on small screens */
+    column-gap: 0.5rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .posts__list {
+    columns: 18rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .posts__list {
+    columns: 24rem;
+  }
+}
+
+.posts__actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 95%;
+  margin: 0.5rem 0 1rem;
 }

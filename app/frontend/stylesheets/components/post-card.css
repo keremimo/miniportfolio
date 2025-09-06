@@ -1,10 +1,15 @@
 .post-card {
   display: block;
+  background: var(--color-secondary);
+  border: 1px solid #263244;
+  border-radius: 12px;
+  padding: 0.75rem;
 }
 
 .post-card__title {
   font-family: var(--font-header);
   text-align: center;
+  margin: 0.5rem 0 0;
 }
 
 .post-card__image {
@@ -21,5 +26,5 @@
 .post-card__link {
   text-decoration: none;
   display: block;
-  color: black;
+  color: inherit;
 }

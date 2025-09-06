@@ -37,7 +37,13 @@
           <% end %>
         </ul>
 
-        <div class="navbar__actions"></div>
+        <div class="navbar__actions">
+          <% if authenticated? %>
+            <%= link_to 'Logout', logout_path, data: { turbo_method: :delete }, class: 'button button--secondary' %>
+          <% else %>
+            <%= link_to 'Login', login_path, class: 'button button--secondary' %>
+          <% end %>
+        </div>
       </div>
     </nav>
     <%= yield %>
