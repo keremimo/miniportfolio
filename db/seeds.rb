@@ -3,18 +3,22 @@
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
 # Example:
-#
-admin_email = ENV.fetch("ADMIN_EMAIL", "admin@example.com")
-admin_password = ENV.fetch("ADMIN_PASSWORD", "password")
+# Seed an initial admin user using environment variables.
+admin_email = ENV["ADMIN_EMAIL"]
+admin_password = ENV["ADMIN_PASSWORD"]
 
-if defined?(User)
-  user = User.find_or_initialize_by(email_address: admin_email)
-  if user.new_record?
-    user.password = admin_password
-    user.password_confirmation = admin_password
-    user.save!
-    puts "Seeded admin user: #{admin_email} / #{admin_password}"
-  else
-    puts "Admin user already exists: #{admin_email}"
+if admin_email.to_s.strip.empty? || admin_password.to_s.strip.empty?
+  puts "[db:seed] Skipping admin seed: set ADMIN_EMAIL and ADMIN_PASSWORD"
+else
+  if defined?(User)
+    user = User.find_or_initialize_by(email_address: admin_email)
+    if user.new_record?
+      user.password = admin_password
+      user.password_confirmation = admin_password
+      user.save!
+      puts "[db:seed] Created admin user: #{admin_email}"
+    else
+      puts "[db:seed] Admin user already exists: #{admin_email} (password unchanged)"
+    end
   end
 end

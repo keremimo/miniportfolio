@@ -9,6 +9,10 @@ fi
 # If running the rails server then create or migrate existing database
 if [ "${@: -2:1}" == "./bin/rails" ] && [ "${@: -1:1}" == "server" ]; then
   ./bin/rails db:prepare
+  # Optionally seed an admin user if credentials are provided via env vars.
+  if [ -n "${ADMIN_EMAIL}" ] && [ -n "${ADMIN_PASSWORD}" ]; then
+    ./bin/rails db:seed
+  fi
 fi
 
 exec "${@}"
