@@ -61,7 +61,6 @@ aliases:
   logs: app logs -f
   dbc: app exec --interactive --reuse "bin/rails dbconsole"
 
-
 # Use a persistent storage volume for sqlite database files and local Active Storage files.
 # Recommended to change this to a mounted volume path that is backed up off server.
 volumes:
@@ -69,8 +68,7 @@ volumes:
   # Make sure this directory exists on the server and is owned by UID/GID 1000
   #   sudo mkdir -p /var/lib/miniportfolio/storage
   #   sudo chown 1000:1000 /var/lib/miniportfolio/storage
-  - "/var/lib/miniportfolio/storage:/rails/storage"
-
+  - "/var/lib/miniportfolio/storage:/app/storage"
 
 # Bridge fingerprinted assets, like JS and CSS, between versions to avoid
 # hitting 404 on in-flight requests. Combines all files from new and old
@@ -90,7 +88,6 @@ builder:
   # secrets:
   #   - GITHUB_TOKEN
   #   - RAILS_MASTER_KEY
-
 # Use a different ssh user than root
 # ssh:
 #   user: app
