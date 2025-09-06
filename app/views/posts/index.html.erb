@@ -12,7 +12,6 @@
       <li class="posts__item post-card">
         <%= link_to post_path(post), class: "post-card__link" do %>
           <h2 class="post-card__title"><%= post.title %></h2>
-          <p class="post-card__text"><%= truncate(post.text.to_s, length: 180) %></p>
           <% if post.image.attached? %>
             <div class="post-card__image">
               <%= image_tag post.image, alt: post.title %>

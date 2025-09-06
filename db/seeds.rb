@@ -4,6 +4,17 @@
 #
 # Example:
 #
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+admin_email = ENV.fetch("ADMIN_EMAIL", "admin@example.com")
+admin_password = ENV.fetch("ADMIN_PASSWORD", "password")
+
+if defined?(User)
+  user = User.find_or_initialize_by(email_address: admin_email)
+  if user.new_record?
+    user.password = admin_password
+    user.password_confirmation = admin_password
+    user.save!
+    puts "Seeded admin user: #{admin_email} / #{admin_password}"
+  else
+    puts "Admin user already exists: #{admin_email}"
+  end
+end

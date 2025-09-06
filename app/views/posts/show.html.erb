@@ -3,7 +3,6 @@
 </div>
 
 <article class="post">
-  <p class="post__text"><%= @post.text %></p>
   <% if @post.image.attached? %>
     <div class="post__image">
       <%= image_tag @post.image, alt: @post.title %>
