@@ -1,3 +1,28 @@
 <div class="page__header">
-    <h1 class="page__title">Small Cute Kitty</h1>
+  <h1 class="page__title">Posts</h1>
+</div>
+
+<div class="posts">
+  <div class="posts__actions">
+    <%= link_to "New Post", new_post_path, class: "button button--primary posts__new-button" %>
+  </div>
+
+  <ul class="posts__list">
+    <% @posts.each do |post| %>
+      <li class="posts__item post-card">
+        <%= link_to post_path(post), class: "post-card__link" do %>
+          <h2 class="post-card__title"><%= post.title %></h2>
+          <p class="post-card__text"><%= truncate(post.text.to_s, length: 180) %></p>
+          <% if post.image.attached? %>
+            <div class="post-card__image">
+              <%= image_tag post.image, alt: post.title %>
+            </div>
+          <% end %>
+          <div class="post-card__excerpt">
+            <%= truncate(strip_tags(post.content.to_s), length: 150) %>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </div>

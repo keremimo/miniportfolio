@@ -1,0 +1,22 @@
+<div class="page__header">
+  <h1 class="page__title"><%= @post.title %></h1>
+</div>
+
+<article class="post">
+  <p class="post__text"><%= @post.text %></p>
+  <% if @post.image.attached? %>
+    <div class="post__image">
+      <%= image_tag @post.image, alt: @post.title %>
+    </div>
+  <% end %>
+
+  <div class="post__content">
+    <%= @post.content %>
+  </div>
+
+  <div class="post__actions">
+    <%= link_to "Edit", edit_post_path(@post), class: "button button--primary post__edit" %>
+    <%= link_to "Back", posts_path, class: "button button--secondary post__back" %>
+    <%= button_to "Delete", @post, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "button button--danger post__delete" %>
+  </div>
+</article>
