@@ -1,5 +1,158 @@
 /* Extracted ActionText styles for Trix toolbar/editor customization */
 @import url("trix/dist/trix.css");
 
-/* You can keep any overrides here or import the previous local file if needed. */
+/*
+  Dark theme overrides for Trix editor & content
+  Keeps toolbar/icons readable, editor surface consistent, and content pleasant on dark bg.
+*/
 
+/* Editor surface */
+trix-editor {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  border: 1px solid #263244;
+  border-top: none; /* visually attach to toolbar */
+  border-radius: 0 0 10px 10px;
+  padding: 0.9rem 1rem;
+  min-height: 12rem;
+  caret-color: var(--color-accent);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+trix-editor:empty::before {
+  color: #9ca3af; /* placeholder on dark */
+}
+
+/* Toolbar */
+trix-toolbar {
+  background: var(--color-primary);
+  border: 1px solid #1b2435;
+  border-bottom: none; /* visually attach to editor */
+  border-radius: 10px 10px 0 0;
+  color: var(--color-text);
+  padding: 0.4rem 0.5rem 0.2rem;
+  margin-bottom: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+trix-toolbar .trix-button-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+trix-toolbar .trix-button-group {
+  border-color: #2a3a55;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+}
+
+trix-toolbar .trix-button {
+  color: rgba(229, 231, 235, 0.85);
+}
+
+trix-toolbar .trix-button.trix-active {
+  background: rgba(34, 211, 238, 0.18);
+  color: var(--color-text);
+}
+
+trix-toolbar .trix-button:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Make default black SVG icons light on dark via filter */
+trix-toolbar .trix-button--icon::before {
+  filter: invert(1) brightness(1.4);
+}
+
+/* Dialogs (e.g., link) */
+trix-toolbar .trix-dialog {
+  background: var(--color-secondary);
+  color: var(--color-text);
+  border-top-color: #2a3a55;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+trix-toolbar .trix-input--dialog {
+  background: var(--color-primary);
+  color: var(--color-text);
+  border-color: #2a3a55;
+  border-radius: 8px;
+}
+
+trix-toolbar .trix-input--dialog:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+/* Remove button inside attachments */
+trix-editor .trix-button--remove {
+  color: #fca5a5;
+}
+trix-editor .trix-button--remove:hover {
+  background: rgba(252, 165, 165, 0.15);
+}
+
+/* Content rendering (show pages) */
+.trix-content {
+  color: var(--color-text);
+}
+
+.trix-content h1,
+.trix-content h2,
+.trix-content h3,
+.trix-content h4,
+.trix-content h5,
+.trix-content h6 {
+  color: var(--color-text);
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+.trix-content a {
+  color: var(--color-accent);
+}
+.trix-content a:hover {
+  color: #06b6d4;
+}
+
+.trix-content blockquote {
+  border-left: 3px solid var(--color-accent);
+  margin: 1em 0;
+  padding: 0.25em 1em;
+  color: #cbd5e1;
+  background: rgba(34, 211, 238, 0.06);
+}
+
+.trix-content pre,
+.trix-content code {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+.trix-content pre {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  overflow: auto;
+}
+.trix-content code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+}
+
+.trix-content hr {
+  border: 0;
+  border-top: 1px solid #2a3a55;
+}
+
+.trix-content img {
+  border-radius: 10px;
+}
+
+.trix-content ul,
+.trix-content ol {
+  padding-left: 1.2em;
+}
+
+.trix-content li {
+  margin: 0.25em 0;
+}

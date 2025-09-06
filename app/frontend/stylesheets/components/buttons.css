@@ -53,3 +53,11 @@
   background: rgba(34, 211, 238, 0.12);
 }
 
+.button--danger {
+  background: #ef4444; /* red-500 */
+  color: #fff;
+}
+
+.button--danger:hover {
+  background: #dc2626; /* red-600 */
+}

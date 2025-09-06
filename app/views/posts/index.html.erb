@@ -1,12 +1,8 @@
 <div class="page__header">
-  <h1 class="page__title">Posts</h1>
+  <h1 class="page__title">Portfolio</h1>
 </div>
 
 <div class="posts">
-  <div class="posts__actions">
-    <%= link_to "New Post", new_post_path, class: "button button--primary posts__new-button" %>
-  </div>
-
   <ul class="posts__list">
     <% @posts.each do |post| %>
       <li class="posts__item post-card">

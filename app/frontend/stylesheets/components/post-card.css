@@ -1,9 +1,5 @@
 .post-card {
   display: block;
-  background: var(--color-secondary);
-  border: 1px solid #263244;
-  border-radius: 12px;
-  padding: 0.75rem;
 }
 
 .post-card__title {
