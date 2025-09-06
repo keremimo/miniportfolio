@@ -2,6 +2,8 @@
   background-color: var(--color-primary-light);
   display: flex;
   flex-direction: column;
+  place-items: center;
+  place-content: center;
 }
 
 .page__header {

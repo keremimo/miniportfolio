@@ -31,6 +31,7 @@
 
         <ul class="navbar__links">
           <li class="navbar__item"><%= link_to 'Posts', posts_path, class: 'navbar__link' %></li>
+          <li class="navbar__item"><%= link_to 'About', about_path, class: 'navbar__link' %></li>
           <% if authenticated? %>
             <li class="navbar__item"><%= link_to 'New Post', new_post_path, class: 'navbar__link' %></li>
           <% end %>

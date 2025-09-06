@@ -1,0 +1,7 @@
+.about {
+  display: flex;
+  min-width: 20rem;
+  width: 80%;
+  max-width: 80rem;
+  align-self: center;
+}
