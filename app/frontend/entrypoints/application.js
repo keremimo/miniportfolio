@@ -1,16 +1,17 @@
 // Vite entrypoint for Rails
-import "@hotwired/turbo-rails";
+import "@hotwired/turbo-rails"
 
-// Stimulus controllers via vite-plugin-ruby helper
-import { Application } from "@hotwired/stimulus";
-import { registerControllers } from "vite-plugin-ruby/register-controllers";
+// Stimulus controllers with HMR
+import { Application } from "@hotwired/stimulus"
+import { registerControllers } from "stimulus-vite-helpers"
 
-const application = Application.start();
-registerControllers(application);
+const application = Application.start()
+const controllers = import.meta.glob("../controllers/**/*_controller.js", { eager: true })
+registerControllers(application, controllers)
 
 // ActionText / Trix
-import "trix";
-import "@rails/actiontext";
+import "trix"
+import "@rails/actiontext"
 
 // Global styles
-import "../stylesheets/application.css";
+import "../stylesheets/application.css"
