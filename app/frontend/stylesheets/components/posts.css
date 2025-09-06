@@ -1,10 +1,33 @@
 .posts {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
+/* Masonry layout using CSS columns */
 .posts__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  /* reset list styles */
+  width: 95%;
+  align-self: center;
+  margin-inline: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  /* masonry via multi-column layout */
+  columns: 24rem; /* responsive column width */
+  column-gap: 0.5rem;
+}
+
+.posts__item {
+  /* make items behave as blocks within columns */
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 1rem;
+
+  /* prevent items from being split between columns */
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
 }

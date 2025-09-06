@@ -1,6 +1,5 @@
 .post-card {
-  display: flex;
-  max-width: 80%;
+  display: block;
 }
 
 .post-card__title {
@@ -9,19 +8,18 @@
 }
 
 .post-card__image {
-  display: flex;
+  display: block;
+}
 
-  img {
-    max-width: 15rem;
-    border-radius: 15px;
-
-    height: auto;
-    aspect-ratio: auto;
-  }
+.post-card__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 .post-card__link {
   text-decoration: none;
-
+  display: block;
   color: black;
 }
