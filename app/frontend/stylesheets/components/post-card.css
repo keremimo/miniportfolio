@@ -10,7 +10,7 @@
 
 .post-card__image {
   display: block;
-  /* enforce a uniform aspect ratio so images can cover without letterboxing */
+  /* uniform card height with cover; tweak aspect as needed */
   aspect-ratio: var(--post-card-aspect, 1 / 1);
   border-radius: 12px;
   overflow: hidden;
@@ -21,7 +21,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fill width and crop as needed */
+  object-fit: cover;
 }
 
 .post-card__link {

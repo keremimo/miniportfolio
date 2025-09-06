@@ -18,17 +18,20 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
   gap: 1rem;
+  align-items: start; /* prevent stretch which can cause overflow visuals */
 
-  /* regular rows; no JS row spanning to avoid overlap */
+  /* regular rows by default */
   grid-auto-rows: auto;
 }
 
 .posts__item {
   /* grid items take full column width */
   display: block;
-  /* ensure items occupy one row and do not overlap */
+  /* ensure items occupy one row initially */
   grid-row-end: auto;
 }
+
+/* No JS masonry: keep layout purely CSS grid */
 
 /* Responsive column tuning */
 @media (max-width: 640px) {
