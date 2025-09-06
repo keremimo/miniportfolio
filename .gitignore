@@ -30,5 +30,15 @@
 
 /public/assets
 
+# Vite / Node
+node_modules/
+.vite/
+/public/vite/
+/.cache/
+.DS_Store
+Thumbs.db
+*.map
+*.tsbuildinfo
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key

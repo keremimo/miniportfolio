@@ -1,0 +1,16 @@
+.page {
+  background-color: var(--color-primary-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.page__header {
+  display: flex;
+  width: 100%;
+  place-content: center;
+}
+
+.page__title {
+  font-family: var(--font-header);
+}
+
