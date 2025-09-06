@@ -23,8 +23,21 @@
   </head>
 
   <body class="page">
-    <nav>
-      <%= link_to 'Home', root_path %>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <div class="navbar__brand">
+          <%= link_to 'Miniportfolio', root_path, class: 'navbar__brand-link' %>
+        </div>
+
+        <ul class="navbar__links">
+          <li class="navbar__item"><%= link_to 'Posts', posts_path, class: 'navbar__link' %></li>
+          <% if authenticated? %>
+            <li class="navbar__item"><%= link_to 'New Post', new_post_path, class: 'navbar__link' %></li>
+          <% end %>
+        </ul>
+
+        <div class="navbar__actions"></div>
+      </div>
     </nav>
     <%= yield %>
   </body>
