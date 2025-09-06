@@ -10,14 +10,18 @@
 
 .post-card__image {
   display: block;
+  /* enforce a uniform aspect ratio so images can cover without letterboxing */
+  aspect-ratio: var(--post-card-aspect, 1 / 1);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .post-card__image img {
   image-rendering: pixelated;
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 12px;
+  height: 100%;
+  object-fit: cover; /* fill width and crop as needed */
 }
 
 .post-card__link {
