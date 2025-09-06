@@ -11,15 +11,12 @@
     <% @posts.each do |post| %>
       <li class="posts__item post-card">
         <%= link_to post_path(post), class: "post-card__link" do %>
-          <h2 class="post-card__title"><%= post.title %></h2>
           <% if post.image.attached? %>
             <div class="post-card__image">
               <%= image_tag post.image, alt: post.title %>
             </div>
           <% end %>
-          <div class="post-card__excerpt">
-            <%= truncate(strip_tags(post.content.to_s), length: 150) %>
-          </div>
+          <h2 class="post-card__title"><%= post.title %></h2>
         <% end %>
       </li>
     <% end %>

@@ -1,0 +1,27 @@
+.post-card {
+  display: flex;
+  max-width: 80%;
+}
+
+.post-card__title {
+  font-family: var(--font-header);
+  text-align: center;
+}
+
+.post-card__image {
+  display: flex;
+
+  img {
+    max-width: 15rem;
+    border-radius: 15px;
+
+    height: auto;
+    aspect-ratio: auto;
+  }
+}
+
+.post-card__link {
+  text-decoration: none;
+
+  color: black;
+}
