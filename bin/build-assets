@@ -2,7 +2,7 @@
 set -euo pipefail
 
 if [ -z "${SECRET_KEY_BASE:-}" ]; then
-  SECRET_KEY_BASE=$(bundle exec rails secret)
+  SECRET_KEY_BASE=$(ruby -e 'require "securerandom"; print SecureRandom.hex(64)')
 fi
 
 export SECRET_KEY_BASE
