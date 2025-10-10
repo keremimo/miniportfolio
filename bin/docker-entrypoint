@@ -1,5 +1,10 @@
 #!/bin/bash -e
 
+if [ "$(id -u)" = "0" ]; then
+  chown -R 1000:1000 /rails/db /rails/log /rails/storage /rails/tmp 2>/dev/null || true
+  exec gosu rails "$0" "$@"
+fi
+
 # Enable jemalloc for reduced memory usage and latency.
 if [ -z "${LD_PRELOAD+x}" ]; then
     LD_PRELOAD=$(find /usr/lib -name libjemalloc.so.2 -print -quit)
