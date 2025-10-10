@@ -9,7 +9,6 @@ services:
       - .env
     environment:
       RAILS_ENV: production
-      SECRET_KEY_BASE: ${SECRET_KEY_BASE:-dummy}
       PORT: 3000
     command: ["./bin/rails", "server"]
     volumes:
