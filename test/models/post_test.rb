@@ -12,5 +12,4 @@ class PostTest < ActiveSupport::TestCase
     assert_not post.valid?
     assert_includes post.errors.attribute_names, :title
   end
-
 end

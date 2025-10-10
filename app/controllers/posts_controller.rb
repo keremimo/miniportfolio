@@ -4,14 +4,14 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(published_at: :desc, created_at: :desc)
   end
 
   def show
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(published_at: Time.zone.today)
   end
 
   def edit
@@ -47,6 +47,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:title, :content, :image, :published_at)
   end
 end

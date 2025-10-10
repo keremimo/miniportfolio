@@ -20,12 +20,14 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   test "should create post with image and content" do
     sign_in_as(@user)
     file = file_fixture("test.svg")
+    publish_date = 2.days.from_now.to_date
     assert_difference("Post.count", 1) do
       post posts_url, params: {
         post: {
           title: "Created via test",
           content: "<h1>Body</h1>",
-          image: Rack::Test::UploadedFile.new(file, "image/svg+xml")
+          image: Rack::Test::UploadedFile.new(file, "image/svg+xml"),
+          published_at: publish_date.to_s
         }
       }
     end
@@ -34,6 +36,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to post_url(created)
     assert created.image.attached?
     assert_equal "Created via test", created.title
+    assert_equal publish_date, created.published_at.to_date
   end
 
   test "should show post" do
@@ -49,10 +52,12 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should update post" do
     sign_in_as(@user)
-    patch post_url(@post), params: { post: { title: "Updated title" } }
+    new_publish_date = 3.days.ago.to_date
+    patch post_url(@post), params: { post: { title: "Updated title", published_at: new_publish_date.to_s } }
     assert_redirected_to post_url(@post)
     @post.reload
     assert_equal "Updated title", @post.title
+    assert_equal new_publish_date, @post.published_at.to_date
   end
 
   test "should destroy post" do

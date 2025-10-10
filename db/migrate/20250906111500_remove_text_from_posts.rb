@@ -3,4 +3,3 @@ class RemoveTextFromPosts < ActiveRecord::Migration[8.0]
     remove_column :posts, :text, :string
   end
 end
-

@@ -1,5 +1,7 @@
 one:
   title: First post
+  published_at: 2025-09-01
 
 two:
   title: Second post
+  published_at: 2025-09-02

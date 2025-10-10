@@ -7,3 +7,5 @@ import "../controllers"
 // ActionText / Trix
 import "trix"
 import "@rails/actiontext"
+
+import "flatpickr/dist/flatpickr.min.css"
