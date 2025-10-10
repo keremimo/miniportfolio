@@ -13,10 +13,11 @@ FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
 # Rails app lives here
 WORKDIR /rails
 
-# Install base packages
+# Install base packages and JavaScript toolchain for asset builds
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 && \
-    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 nodejs npm && \
+    npm install --global yarn@1.22.22 && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives /root/.npm
 
 # Set production environment
 ENV RAILS_ENV="production" \
