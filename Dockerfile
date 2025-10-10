@@ -66,6 +66,6 @@ RUN groupadd --system --gid 1000 rails && \
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Start server via Thruster by default, this can be overwritten at runtime
-EXPOSE 80
+# Start server directly on the Rails default port; reverse proxies should target 3000
+EXPOSE 3000
 CMD ["./bin/rails", "server", "-b", "0.0.0.0", "-p", "${PORT:-3000}"]
