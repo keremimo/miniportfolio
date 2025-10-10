@@ -1,0 +1,5 @@
+#!/bin/sh
+set -euo pipefail
+
+printf 'Running database migrations (version %s)...\n' "${KAMAL_VERSION:-unknown}" >&2
+bin/kamal app exec --reuse "bin/rails db:migrate"

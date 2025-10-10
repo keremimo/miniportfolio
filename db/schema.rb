@@ -53,7 +53,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_06_120000) do
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "published_at", default: "2025-10-10 18:38:41", null: false
+    t.datetime "published_at", precision: 6, null: false
   end
 
   create_table "sessions", force: :cascade do |t|
