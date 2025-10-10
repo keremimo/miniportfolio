@@ -18,7 +18,9 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%= vite_client_tag %>
-    <%= vite_stylesheet_tag "application" %>
+    <% unless Rails.env.test? %>
+      <%= vite_stylesheet_tag "application" %>
+    <% end %>
     <%= vite_javascript_tag "application", "data-turbo-track": "reload" %>
   </head>
 
