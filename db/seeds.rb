@@ -22,3 +22,12 @@ else
     end
   end
 end
+
+if defined?(HomePage)
+  HomePage.first_or_create!(title: "Home") do |page|
+    page.content = <<~HTML
+      <h2>Welcome to your new home page</h2>
+      <p>Use the edit button to introduce yourself, highlight featured work, or share announcements.</p>
+    HTML
+  end
+end

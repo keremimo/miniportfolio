@@ -32,7 +32,8 @@
         </div>
 
         <ul class="navbar__links">
-          <li class="navbar__item"><%= link_to 'Portfolio', posts_path, class: "navbar__link #{'is-active' if current_page?(posts_path) || current_page?(root_path)}" %></li>
+          <li class="navbar__item"><%= link_to 'Home', root_path, class: "navbar__link #{'is-active' if controller_name == 'home_pages'}" %></li>
+          <li class="navbar__item"><%= link_to 'Portfolio', posts_path, class: "navbar__link #{'is-active' if controller_name == 'posts'}" %></li>
           <li class="navbar__item"><%= link_to 'About', about_path, class: "navbar__link #{'is-active' if current_page?(about_path)}" %></li>
           <% if authenticated? %>
             <li class="navbar__item"><%= link_to 'New Post', new_post_path, class: 'navbar__link' %></li>
