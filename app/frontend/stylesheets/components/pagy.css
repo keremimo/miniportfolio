@@ -1,0 +1,19 @@
+.pagy {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+
+  a {
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+
+    &:hover:not([aria-disabled="true"]) {
+      color: var(--color-primary);
+      background-color: var(--color-text);
+    }
+
+    &[aria-current] {
+      background-color: var(--color-secondary);
+    }
+  }
+}

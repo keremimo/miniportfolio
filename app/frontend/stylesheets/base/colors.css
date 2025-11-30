@@ -1,10 +1,10 @@
 :root {
   /* Dark theme palette */
-  --color-primary: #0f172a;        /* slate-900 */
-  --color-primary-light: #111827;  /* gray-900 (page bg) */
-  --color-secondary: #1f2937;      /* gray-800 */
-  --color-accent: #22d3ee;         /* cyan-400 */
+  --color-primary: #0f172a; /* slate-900 */
+  --color-primary-light: #111827; /* gray-900 (page bg) */
+  --color-secondary: #1f2937; /* gray-800 */
+  --color-accent: #22d3ee; /* cyan-400 */
 
   /* Text and utility */
-  --color-text: #e5e7eb;           /* gray-200 */
+  --color-text: #e5e7eb; /* gray-200 */
 }

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    @posts = Post.order(published_at: :desc, created_at: :desc)
+    @pagy, @posts = pagy(:offset, Post.order(published_at: :desc, created_at: :desc), limit: 6, id: "pagy")
   end
 
   def show
