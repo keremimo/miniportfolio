@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   resource :home_page, only: %i[show edit update]
+  resource :price_list_page, path: "price-list", only: %i[show edit update], as: :price_list
 
   # Defines the root path route ("/")
   root "home_pages#show"

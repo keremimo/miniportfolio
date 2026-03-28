@@ -1,0 +1,20 @@
+<section class="home-page">
+  <header class="home-page__header">
+    <h1 class="home-page__title"><%= @price_list_page.title %></h1>
+    <% if authenticated? %>
+      <div class="home-page__actions">
+        <%= link_to "Edit price list", edit_price_list_path, class: "button button--primary" %>
+      </div>
+    <% end %>
+  </header>
+
+  <% if @price_list_page.content&.body&.present? %>
+    <div class="home-page__body">
+      <%= @price_list_page.content %>
+    </div>
+  <% else %>
+    <p class="home-page__empty-state">
+      Add your pricing details with the editor.
+    </p>
+  <% end %>
+</section>
