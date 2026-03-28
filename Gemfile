@@ -67,4 +67,4 @@ gem "ruby-lsp", "~> 0.26.1"
 gem "rubocop", "~> 1.86"
 gem "ruby-lsp-rails", "~> 0.4.8"
 
-gem "pagy", "~> 43.1"
+gem "pagy", "~> 43.4"
