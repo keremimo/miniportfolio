@@ -202,7 +202,7 @@ GEM
     nokogiri (1.19.2-x86_64-linux-musl)
       racc (~> 1.4)
     ostruct (0.6.3)
-    pagy (43.4.4)
+    pagy (43.5.1)
       json
       uri
       yaml
@@ -421,7 +421,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   jbuilder
   kamal
-  pagy (~> 43.4)
+  pagy (~> 43.5)
   propshaft
   puma (>= 5.0)
   rails (~> 8.1.3)
