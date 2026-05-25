@@ -24,6 +24,5 @@ Rails.application.routes.draw do
 
   resources :posts
 
-  # Static pages
-  get "/about", to: "pages#about", as: :about
+  resource :about, controller: :about_pages, path: "about", only: %i[show edit update]
 end

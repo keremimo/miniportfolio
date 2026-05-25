@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 8.1.3"
+gem "rails", "~> 8.1.3", ">= 8.1.3"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
@@ -39,7 +39,7 @@ gem "kamal", require: false
 gem "thruster", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 2.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -63,8 +63,8 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "ruby-lsp", "~> 0.26.1"
+gem "ruby-lsp", "~> 0.26.9"
 gem "rubocop", "~> 1.86"
 gem "ruby-lsp-rails", "~> 0.4.8"
 
-gem "pagy", "~> 43.4"
+gem "pagy", "~> 43.5"

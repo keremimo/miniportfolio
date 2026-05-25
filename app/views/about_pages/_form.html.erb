@@ -1,0 +1,29 @@
+<%= form_with(model: about_page, url: about_path, method: :patch, html: { class: "post-form" }) do |form| %>
+  <% if about_page.errors.any? %>
+    <div class="post-form__errors">
+      <h2 class="post-form__errors-title"><%= pluralize(about_page.errors.count, "error") %> prohibited this page from being saved:</h2>
+      <ul class="post-form__errors-list">
+        <% about_page.errors.full_messages.each do |message| %>
+          <li class="post-form__errors-item"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="post-form__field">
+    <%= form.label :title, "Page title", class: "post-form__label" %>
+    <%= form.text_field :title, class: "post-form__input" %>
+  </div>
+
+  <div class="post-form__field">
+    <%= form.label :content, "Page content", class: "post-form__label" %>
+    <div class="post-form__richtext">
+      <%= form.rich_text_area :content, class: "post-form__richtext-editor" %>
+    </div>
+  </div>
+
+  <div class="post-form__actions">
+    <%= form.submit "Save About Page", class: "button button--primary post-form__submit" %>
+    <%= link_to "Cancel", about_path, class: "button button--secondary post-form__cancel" %>
+  </div>
+<% end %>

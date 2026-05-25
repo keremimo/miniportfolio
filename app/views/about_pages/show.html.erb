@@ -1,0 +1,20 @@
+<section class="about">
+  <header class="about__header">
+    <h1 class="about__title"><%= @about_page.title %></h1>
+    <% if authenticated? %>
+      <div class="about__actions">
+        <%= link_to "Edit about page", edit_about_path, class: "button button--primary" %>
+      </div>
+    <% end %>
+  </header>
+
+  <% if @about_page.content&.body&.present? %>
+    <div class="about__content">
+      <%= @about_page.content %>
+    </div>
+  <% else %>
+    <p class="about__empty-state">
+      Add your about page content with the editor.
+    </p>
+  <% end %>
+</section>

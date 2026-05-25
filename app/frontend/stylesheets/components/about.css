@@ -1,7 +1,68 @@
 .about {
+  width: 100%;
+  max-width: 72ch;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1.5rem;
   display: flex;
-  min-width: 20rem;
-  width: 80%;
-  max-width: 80rem;
-  align-self: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-page-form {
+  width: 100%;
+  max-width: 60rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.about__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.about__title {
+  font-family: var(--font-header);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin: 0;
+}
+
+.about__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.about__content {
+  background: var(--color-secondary);
+  border: 1px solid #263244;
+  border-radius: 14px;
+  padding: 1.25rem 1.2rem;
+  line-height: 1.75;
+}
+
+.about__content .trix-content {
+  font-size: 1.05rem;
+}
+
+.about__content .trix-content p {
+  margin: 0.75em 0;
+}
+
+.about__empty-state {
+  margin: 0;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding-inline: 1rem;
+  }
+
+  .about__title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
 }
