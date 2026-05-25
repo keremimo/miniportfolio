@@ -1,6 +1,6 @@
 .about {
   width: 100%;
-  max-width: 72ch;
+  max-width: 75rem;
   margin: 1.5rem auto 3rem;
   padding: 0 1.5rem;
   display: flex;
@@ -36,25 +36,32 @@
 }
 
 .about__content {
-  background: var(--color-secondary);
-  border: 1px solid #263244;
-  border-radius: 14px;
-  padding: 1.25rem 1.2rem;
-  line-height: 1.75;
+  max-width: 70ch;
 }
 
 .about__content .trix-content {
-  font-size: 1.05rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
-.about__content .trix-content p {
-  margin: 0.75em 0;
+.about__content .trix-content > * {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.about__content .trix-content > * + * {
+  margin-top: 1rem;
 }
 
 .about__empty-state {
   margin: 0;
   color: #9ca3af;
   font-style: italic;
+  max-width: 70ch;
 }
 
 @media (max-width: 640px) {
