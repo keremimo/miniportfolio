@@ -64,7 +64,7 @@ group :test do
 end
 
 gem "ruby-lsp", "~> 0.26.9"
-gem "rubocop", "~> 1.86"
+gem "rubocop", "~> 1.87"
 gem "ruby-lsp-rails", "~> 0.4.8"
 
 gem "pagy", "~> 43.5"
